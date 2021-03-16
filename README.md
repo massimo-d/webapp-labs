@@ -1,1 +1,1 @@
-# WebApp I - Labs
+# WebApp I - Laboratories
