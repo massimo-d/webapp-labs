@@ -2,6 +2,7 @@
 
 const dayjs = require('dayjs');
 const sqlite3 = require('sqlite3');
+const sqlite = require('sqlite');
 
 function Task (id ,description,urgent = false , priv = true , deadline = undefined) {
     this.id = id;
@@ -42,64 +43,49 @@ function Tasklist() {
 }
 
 async function opendb () {
-    const db = new sqlite3.Database('tasks.db', (err)=>{
-        if(err) throw err ;
-    }) ;
+    const db = await sqlite.open({filename: 'tasks.db', driver: sqlite3.Database}) 
     return db;
 }
 
 async function loadandPrint(db) {
-    let tasklist = new Tasklist();
-    db.all('SELECT * FROM tasks', (err, rows) => {
-        if(err)
-            throw(err);
-        else {
-            for(let row of rows) {
-                tasklist.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-                console.log(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-            }
-        }
-    }) ;
-    return tasklist;
+    let tas = new Tasklist();
+    const rows = await db.all('SELECT * FROM tasks');
+    rows.forEach( row => {
+        tas.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
+    });
+    console.table(tas.tasks);
+    return tas;
 }
 
 async function loaddeadline(db,deadline) {
-    let tasklist = new Tasklist();
-    db.all('SELECT * FROM tasks WHERE deadline > date(?)', [dayjs(deadline).format("YYYY-MM-DD")] , (err, rows) => {
-        if(err)
-            throw(err);
-        else {
-            for(let row of rows) {
-                tasklist.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-                console.log(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-            }
-        }
-    }) ;
-    return tasklist;
+    let tas = new Tasklist();
+    const rows = await db.all('SELECT * FROM tasks WHERE deadline > date(?) OR deadline IS NULL', [dayjs(deadline).format("YYYY-MM-DD")] );
+    rows.forEach( row => {
+        tas.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
+    });
+    console.table(tas.tasks);
+    return tas;
 }
 
 async function loadword(db,word) {
-    let tasklist = new Tasklist();
-    db.all('SELECT * FROM tasks WHERE description LIKE ?',['%' +word +'%'], (err, rows) => {
-        if(err)
-            throw(err);
-        else {
-            for(let row of rows) {
-                tasklist.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-                console.log(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
-            }
-        }
-    }) ;
-    return tasklist;
+    let tas = new Tasklist();
+    const rows = await db.all('SELECT * FROM tasks WHERE description LIKE ?',['%' +word +'%']);
+    rows.forEach( row => {
+        tas.add(new Task(row.id , row.description , row.urgent , row.private ,row.deadline));
+    });
+    console.table(tas.tasks);
+    return tas;
 }
+
 async function main () {
     const db = await opendb();
 
-    let Tasklist1 = await loadandPrint(db);
-    let Tasklist2 = await loaddeadline(db,dayjs());
-    let Tasklist3 = await loadword(db,'ph');
+    let tasklist1 = await loadandPrint(db);
+    let tasklist2 = await loaddeadline(db,dayjs());
+    let tasklist3 = await loadword(db,'ph');
 
-    console.log("XXXXX")
+    tasklist1.sortAndprint();
+
 }
 
 main() ;
