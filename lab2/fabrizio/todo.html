@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="todo">
+    <meta name="author" content="lab02">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <title>ToDo Manager</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-success">
+            <div class="container-fluid justify-content-between">
+                <div class="d-flex navbutton-div">
+                    <i class="fas fa-bars navbutton"></i>
+                </div>
+                <div class=" d-flex navigation navbutton-brand">
+                    <a class="navbar-brand" href="todo.html"><i class="fas fa-check-double"></i>ToDo Manager</a>
+                </div>
+                <div class="d-flex navigation mobile-hidden">
+                    <input type="search" class="form-control mobile-hidden" placeholder="Search" aria-label="Search" />
+                </div>
+                <div class="d-flex navigation navbutton-div">
+                    <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid full">
+            <div class="row full">
+                <aside class="col-md-3 bg-light mobile-hidden">
+                    <table class="table text-secondary">
+                        <tr>
+                            <td>
+                                All
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Important
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Today
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Next 7 days
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Private
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+                <div class="col-sm-9">
+                    <h1>
+                        All
+                    </h1>
+                    <table class="table border-bottom">
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="task" name="task" value="task1">
+                                <label for="task1"> Complete Lab 2</label>
+                            </td>
+                            <td></td>
+                            <td class="right-text">Monday 22 March 2021 at 14:30</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="task" name="task" value="task2">
+                                <label for="task2"> Buy some groceries</label>
+                            </td>
+                            <td><i class="fas fa-user-check"></i></td>
+                            <td class="right-text">Today at 14:00</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="task" name="task" value="task3">
+                                <label for="task3" class="important"> Read a good book</label>
+                            </td>
+                            <td></td>
+                            <td class="right-text"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <button type='button' class='btn btn-success addbutton'>+</button>
+    </main>
+</body>
+
+</html>
