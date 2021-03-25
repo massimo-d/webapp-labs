@@ -22,17 +22,6 @@
 
     <title>ToDo Manager</title>
 
-    <script>
-        function toggleMenu() {
-            var menuBox = document.getElementById('menu-box');
-            if (menuBox.style.display == "block") { // if is menuBox displayed, hide it
-                menuBox.style.display = "none";
-            }
-            else { // if is menuBox hidden, display it
-                menuBox.style.display = "block";
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -128,6 +117,17 @@
             </div>
             <button type='button' class='btn btn-success addbutton'>+</button>
     </main>
+    <script>
+        var menuBox = document.getElementById('menu-box');
+        function toggleMenu() {
+            if (menuBox.style.display == "block") { // if is menuBox displayed, hide it
+                menuBox.style.display = "none";
+            }
+            else { // if is menuBox hidden, display it
+                menuBox.style.display = "block";
+            }
+        }
+    </script>
 </body>
 
 </html>
