@@ -1,0 +1,69 @@
+#logo-desc{
+    color:white;
+}
+
+header{
+    background-color: rgb(39, 211, 23);
+    color: white;
+
+}
+
+header > a{
+    color:white;
+}
+
+header > a:hover{
+     color:rgb(223, 219, 219);
+}
+
+#menu{
+    min-height: 100vh;
+    background-color: rgb(223, 219, 219);
+    color: rgba(0, 0, 0, 0.945);
+    margin-right: 0;
+    padding-right: 0;
+
+}
+
+ul{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+li{
+    margin-right: 0;
+    padding-right: 0;
+}
+p{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:0;
+    margin-left:0;
+ }
+
+li:hover{
+    background-color: rgba(39, 211, 23, 0.384);
+    color: white;
+}
+.btn{
+    background-color: rgb(39, 211, 23);
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    margin: 20px;
+    border-radius: 50% ;
+
+}
+
+/* @media (max-width: 575.98px) { 
+    #searchbar{
+        display: none;
+    }
+    
+} */
