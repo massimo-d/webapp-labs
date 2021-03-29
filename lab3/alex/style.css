@@ -1,0 +1,10 @@
+a.bg-light:hover , a{
+    color:inherit !important;
+}
+a.bg-light:focus {
+    background-color: #28A745 !important;
+}
+.list-group-item.active{
+    background-color: #28A745 !important;
+    border-color: #28A745 !important;
+}
