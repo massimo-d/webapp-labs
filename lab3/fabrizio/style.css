@@ -1,0 +1,65 @@
+html, body, main {
+    height: 97%;
+}
+
+main {
+    margin-top: 0.5%;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.important {
+    color: red;
+}
+
+.full {
+    height: 100%;
+}
+
+/* navbar elements */
+.navigation {
+    width: 33%;
+}
+
+.user-icon {
+    text-align: right;
+    width: 100%;
+}
+
+.navbutton {
+    display: none;
+}
+/* end of navbar */
+
+/* + button */
+.addbutton {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    font-size: 18px; 
+    text-align: center; 
+}
+
+/* to collapse and resize only on mobile */
+@media screen and (max-width: 600px) {
+    .mobile-hidden {
+        display: none;
+        width: 0%;
+    }
+    .navbutton {
+        display: inline;
+    }
+
+    .navbutton-div {
+        width: 25%;
+    }
+
+    .navbutton-brand {
+        width: 50%;
+    }
+}
