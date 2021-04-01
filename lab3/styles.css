@@ -1,0 +1,87 @@
+#logo-desc{
+    color:white;
+}
+
+header{
+    background-color: rgb(39, 211, 23);
+    color: white;
+
+}
+
+.active{
+    background-color: rgb(36, 184, 23);
+    color: white;
+}
+
+.nav-link{
+    margin:0;
+}
+
+header > a{
+    color:white;
+}
+
+header > a:hover{
+    color: rgb(231, 231, 231);
+}
+
+#menu{
+    background-color: rgb(231, 231, 231);
+    color: rgba(0, 0, 0, 0.945);
+    margin-right: 0;
+    padding-right: 0;
+
+}
+
+.myheight{
+    min-height: 100vh;
+}
+
+
+ul{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+li{
+    margin-right: 0;
+    padding-right: 0;
+}
+p{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:0;
+    margin-left:0;
+ }
+
+.nav-item:hover{
+    background-color: rgba(39, 211, 23, 0.384);
+    color: white;
+}
+
+.red{
+    color:red;
+}
+
+.btn{
+    background-color: rgb(39, 211, 23);
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    margin: 20px;
+    border-radius: 50% ;
+
+}
+
+/* @media (max-width: 575.98px) { 
+    #searchbar{
+        display: none;
+    }
+    
+} */
