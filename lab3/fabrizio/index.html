@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="todo">
+    <meta name="author" content="lab02">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Javascript -->
+    <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script defer src="tasks.js"></script>
+
+    <title>ToDo Manager</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-success">
+            <div class="container-fluid justify-content-between">
+                <div class="d-flex d-none d-sm-block navbutton-div">
+                    <i class="fas fa-bars navbutton" onclick="toggleMenu()"></i>
+                </div>
+                <div class=" d-flex navigation navbutton-brand">
+                    <a class="navbar-brand" href="index.html"><i class="fas fa-check-double"></i>ToDo Manager</a>
+                </div>
+                <div class="d-flex navigation mobile-hidden">
+                    <input type="search" class="form-control mobile-hidden" placeholder="Search" aria-label="Search" />
+                </div>
+                <div class="d-flex navigation navbutton-div">
+                    <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid full">
+            <ul id="menu-box" style="display: none" class="list-unstyled bg-light text-secondary border-bottom">
+                <li><a id="all-filter-sm" class="btn btn-light btn-block text-justify" href="#" role="button">All</a>
+                </li>
+                <li><a id="important-filter-sm" class="btn btn-light btn-block text-justify" href="#"
+                        role="button">Important</a></li>
+                <li><a id="today-filter-sm" class="btn btn-light btn-block text-justify" href="#"
+                        role="button">Today</a></li>
+                <li><a id="7days-filter-sm" class="btn btn-light btn-block text-justify" href="#" role="button">Next 7
+                        days</a></li>
+                <li><a id="private-filter-sm" class="btn btn-light btn-block text-justify" href="#"
+                        role="button">Private</a></li>
+            </ul>
+            <div class="row full">
+                <aside class="col-md-3 bg-light d-none d-sm-block">
+                    <table class="table text-secondary" id="index_table">
+                        <tr>
+                            <td>
+                                <a id="all-filter" class="btn btn-light btn-block text-justify" href="#"
+                                    role="button">All</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a id="important-filter" class="btn btn-light btn-block text-justify" href="#"
+                                    role="button">Important</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a id="today-filter" class="btn btn-light btn-block text-justify" href="#"
+                                    role="button">Today</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a id="7days-filter" class="btn btn-light btn-block text-justify" href="#"
+                                    role="button">Next 7 days</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a id="private-filter" class="btn btn-light btn-block text-justify" href="#"
+                                    role="button">Private</a>
+                            </td>
+                        </tr>
+                    </table>
+                </aside>
+                <div class="col-sm-9" id="content-div">
+                    <h1 id="section-title">
+
+                    </h1>
+                    <table class="table border-bottom" id="content_table">
+
+                    </table>
+                </div>
+            </div>
+            <button type='button' class='btn btn-success addbutton'>+</button>
+    </main>
+    <script>
+        var menuBox = document.getElementById('menu-box');
+        function toggleMenu() {
+            if (menuBox.style.display == "block") { // if is menuBox displayed, hide it
+                menuBox.style.display = "none";
+            }
+            else { // if is menuBox hidden, display it
+                menuBox.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
